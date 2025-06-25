@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVOLUA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/formularios.css">
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-header">
+            <h1><i class="fas fa-dumbbell"></i> Formulário de Treino Personalizado</h1>
+            <p>Preencha os campos para montarmos o treino ideal para você</p>
+        </div>
+
+        <form id="treino-form" class="treino-form">
+            <div class="form-section">
+                <h2><i class="fas fa-tachometer-alt"></i> Nível e Objetivo</h2>
+                <div class="form-group">
+                    <label for="nivel">Seu nível de experiência:</label>
+                    <select id="nivel" name="nivel" required>
+                        <option value="">Selecione...</option>
+                        <option value="iniciante">Iniciante (Nunca treinei ou estou voltando)</option>
+                        <option value="intermediario">Intermediário (Treino há 6 meses ou mais)</option>
+                        <option value="avancado">Avançado (Treino há mais de 2 anos)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="objetivo_treino">Principal objetivo do treino:</label>
+                    <select id="objetivo_treino" name="objetivo_treino" required>
+                        <option value="">Selecione...</option>
+                        <option value="hipertrofia">Hipertrofia (Ganho de massa muscular)</option>
+                        <option value="forca">Força</option>
+                        <option value="resistencia">Resistência Muscular</option>
+                        <option value="emagrecimento">Emagrecimento</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2><i class="fas fa-clock"></i> Disponibilidade e Equipamentos</h2>
+                <div class="form-group">
+                    <label for="dias_treino">Quantos dias por semana você pode treinar?</label>
+                    <input type="number" id="dias_treino" name="dias_treino" min="1" max="7" required>
+                </div>
+                 <div class="form-group">
+                    <label for="tempo_treino">Quanto tempo por sessão (em minutos)?</label>
+                    <input type="number" id="tempo_treino" name="tempo_treino" min="20" max="120" step="5" required>
+                </div>
+                <div class="form-group">
+                    <label>Onde você treina?</label>
+                    <div class="checkbox-group">
+                       <label><input type="radio" name="local_treino" value="academia" checked> Academia completa</label>
+                       <label><input type="radio" name="local_treino" value="casa"> Em casa</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Quais equipamentos você tem acesso (se treina em casa)?</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="equipamentos" value="halteres"> Halteres</label>
+                        <label><input type="checkbox" name="equipamentos" value="barra"> Barra</label>
+                        <label><input type="checkbox" name="equipamentos" value="elasticos"> Elásticos de resistência</label>
+                        <label><input type="checkbox" name="equipamentos" value="kettlebell"> Kettlebell</label>
+                        <label><input type="checkbox" name="equipamentos" value="nenhum"> Apenas o peso do corpo</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2><i class="fas fa-heartbeat"></i> Saúde e Preferências</h2>
+                <div class="form-group">
+                    <label>Você possui alguma lesão ou condição médica?</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="lesoes" value="nenhuma"> Nenhuma</label>
+                        <label><input type="checkbox" name="lesoes" value="joelho"> Joelho</label>
+                        <label><input type="checkbox" name="lesoes" value="lombar"> Lombar</label>
+                        <label><input type="checkbox" name="lesoes" value="ombro"> Ombro</label>
+                        <label><input type="checkbox" name="lesoes" value="outra"> Outra</label>
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label for="detalhes_lesao">Se marcou algo acima, por favor, detalhe:</label>
+                    <textarea id="detalhes_lesao" name="detalhes_lesao" rows="3"></textarea>
+                </div>
+                 <div class="form-group">
+                    <label>Quais tipos de atividade você prefere?</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="preferencias" value="musculacao"> Musculação</label>
+                        <label><input type="checkbox" name="preferencias" value="cardio"> Cardio (corrida, bike, etc)</label>
+                        <label><input type="checkbox" name="preferencias" value="funcional"> Treino Funcional</label>
+                        <label><input type="checkbox" name="preferencias" value="hiit"> HIIT (Alta intensidade)</label>
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label for="observacoes_treino">Observações adicionais (ex: grupos musculares que quer focar):</label>
+                    <textarea id="observacoes_treino" name="observacoes_treino" rows="4"></textarea>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-save"></i> Salvar Treino
+                </button>
+                <button type="button" class="btn btn-secondary" id="cancelar-treino">
+                    <i class="fas fa-times"></i> Cancelar
+                </button>
+                <button type="button" class="btn btn-danger" id="excluir-treino" style="display: none;">
+                    <i class="fas fa-trash"></i> Excluir Treino
+                </button>
+            </div>
+        </form>
+    </div>
+    <script src="js/database.js"></script>
+    <script src="js/formTreino.js"></script>
+</body>
+</html>

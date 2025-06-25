@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVOLUA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/formularios.css">
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-header">
+            <h1><i class="fas fa-utensils"></i> Formulário de Dieta Personalizada</h1>
+            <p>Preencha este formulário para receber um plano alimentar personalizado</p>
+        </div>
+
+        <form id="dieta-form" class="dieta-form">
+            <div class="form-section">
+                <h2><i class="fas fa-user"></i> Informações Básicas</h2>
+                <div class="form-group">
+                    <label for="altura">Altura (cm)</label>
+                    <input type="number" id="altura" name="altura" min="100" max="250" required>
+                </div>
+                <div class="form-group">
+                    <label for="peso">Peso Atual (kg)</label>
+                    <input type="number" id="peso" name="peso" min="30" max="300" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label for="objetivo">Objetivo</label>
+                    <select id="objetivo" name="objetivo" required>
+                        <option value="">Selecione...</option>
+                        <option value="perda">Perda de Peso</option>
+                        <option value="ganho">Ganho de Massa Muscular</option>
+                        <option value="manutencao">Manutenção</option>
+                        <option value="definicao">Definição Muscular</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2><i class="fas fa-apple-alt"></i> Hábitos Alimentares</h2>
+                <div class="form-group">
+                    <label>Quantas refeições você faz por dia?</label>
+                    <input type="number" id="refeicoes" name="refeicoes" min="1" max="10" required>
+                </div>
+                <div class="form-group">
+                    <label>Você tem alguma restrição alimentar?</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="restricoes" value="lactose"> Intolerância à lactose</label>
+                        <label><input type="checkbox" name="restricoes" value="gluten"> Intolerância ao glúten</label>
+                        <label><input type="checkbox" name="restricoes" value="vegano"> Dieta vegana</label>
+                        <label><input type="checkbox" name="restricoes" value="vegetariano"> Dieta vegetariana</label>
+                        <label><input type="checkbox" name="restricoes" value="diabetes"> Diabetes</label>
+                        <label><input type="checkbox" name="restricoes" value="outras"> Outras</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="outras_restricoes">Descreva outras restrições ou alergias:</label>
+                    <textarea id="outras_restricoes" name="outras_restricoes" rows="3"></textarea>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2><i class="fas fa-heart"></i> Preferências Alimentares</h2>
+                <div class="form-group">
+                    <label>Quais desses alimentos você consome regularmente?</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="alimentos_preferidos" value="frango"> Frango</label>
+                        <label><input type="checkbox" name="alimentos_preferidos" value="peixe"> Peixe</label>
+                        <label><input type="checkbox" name="alimentos_preferidos" value="carne_vermelha"> Carne vermelha</label>
+                        <label><input type="checkbox" name="alimentos_preferidos" value="ovos"> Ovos</label>
+                        <label><input type="checkbox" name="alimentos_preferidos" value="legumes"> Legumes</label>
+                        <label><input type="checkbox" name="alimentos_preferidos" value="frutas"> Frutas</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Quais desses alimentos você não gosta ou evita?</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="alimentos_evitados" value="frango"> Frango</label>
+                        <label><input type="checkbox" name="alimentos_evitados" value="peixe"> Peixe</label>
+                        <label><input type="checkbox" name="alimentos_evitados" value="carne_vermelha"> Carne vermelha</label>
+                        <label><input type="checkbox" name="alimentos_evitados" value="ovos"> Ovos</label>
+                        <label><input type="checkbox" name="alimentos_evitados" value="legumes"> Legumes</label>
+                        <label><input type="checkbox" name="alimentos_evitados" value="frutas"> Frutas</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2><i class="fas fa-calendar-alt"></i> Rotina e Metas</h2>
+                <div class="form-group">
+                    <label for="horario_acordar">Que horas você geralmente acorda?</label>
+                    <input type="time" id="horario_acordar" name="horario_acordar" required>
+                </div>
+                <div class="form-group">
+                    <label for="horario_dormir">Que horas você geralmente dorme?</label>
+                    <input type="time" id="horario_dormir" name="horario_dormir" required>
+                </div>
+                <div class="form-group">
+                    <label for="meta_calorica">Meta calórica diária (se souber)</label>
+                    <input type="number" id="meta_calorica" name="meta_calorica" min="0">
+                </div>
+                <div class="form-group">
+                    <label for="observacoes">Observações adicionais:</label>
+                    <textarea id="observacoes" name="observacoes" rows="4"></textarea>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-save"></i> Salvar Dieta
+                </button>
+                <button type="button" class="btn btn-secondary" id="cancelar-dieta">
+                    <i class="fas fa-times"></i> Cancelar
+                </button>
+                <button type="button" class="btn btn-danger" id="excluir-dieta" style="display: none;">
+                    <i class="fas fa-trash"></i> Excluir Dieta
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script src="js/database.js"></script>
+
+    <script src="js/formDieta.js"></script>
+</body>
+</html>

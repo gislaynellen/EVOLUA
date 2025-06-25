@@ -1,0 +1,98 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0a0a0a;
+  color: white;
+  padding-top: 70px;
+}
+
+.navbar {
+  background-color: rgba(10, 10, 10, 0.7) !important;
+  backdrop-filter: blur(10px);
+}
+
+.navbar-brand, .nav-link {
+  color: white !important;
+}
+
+.nav-link:hover {
+  color: #b565d6 !important;
+}
+
+.nav-link.active {
+  color: #b565d6 !important;
+  font-weight: 500;
+}
+
+.depoimentos-section {
+  padding: 80px 0;
+  background-color: #0a0a0a;
+}
+
+.depoimento-card {
+  background-color: #1a1a1a;
+  border-radius: 15px;
+  padding: 25px;
+  transition: all 0.3s;
+  height: 100%;
+}
+
+.depoimento-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(117, 18, 126, 0.3);
+}
+
+.depoimento-texto {
+  font-style: italic;
+  color: #e0e0e0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.rating {
+  color: #ffc107;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.depoimento-autor {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.autor-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #75127e, #114764);
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.autor-info h4 {
+  font-size: 1rem;
+  margin: 0;
+  color: white;
+}
+
+.autor-info p {
+  font-size: 0.8rem;
+  color: #b8b8b8;
+  margin: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .depoimentos-section {
+    padding: 60px 0;
+  }
+  
+  .depoimento-card {
+    max-width: 100%;
+  }
+}

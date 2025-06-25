@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/perfil.css">
+</head>
+<body>
+    <div class="profile-container">
+        <aside class="profile-sidebar">
+            <div class="sidebar-header">
+                <h3>EVOLUA</h3>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#" class="nav-link active" data-section="dados-pessoais"><i class="fas fa-user-edit"></i> Dados Pessoais</a></li>
+                    <li><a href="#" class="nav-link" data-section="plano"><i class="fas fa-gem"></i> Meu Plano</a></li>
+                    <li><a href="#" class="nav-link" data-section="plano-alimentar"><i class="fas fa-utensils"></i> Plano Alimentar</a></li>
+                    <li><a href="#" class="nav-link" data-section="plano-treino"><i class="fas fa-dumbbell"></i> Plano de Treino</a></li>
+                    <li><a href="#" class="nav-link" data-section="feedback"><i class="fas fa-comment-dots"></i> Feedback</a></li>
+                    <li class="nav-divider"></li>
+                    <li><a href="#" class="nav-link" data-section="cancelar-conta"><i class="fas fa-user-slash"></i> Cancelar Conta</a></li>
+                    <li><a href="#" id="logout-btn" class="nav-link"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="profile-main">
+            <header class="profile-header">
+                <div id="user-info" class="user-details">
+                    </div>
+            </header>
+            
+            <div class="content-area">
+                
+                <section id="section-dados-pessoais" class="content-section active">
+                    <h2><i class="fas fa-user-edit"></i> Dados Pessoais</h2>
+                    <div class="card">
+                        <div id="dados-pessoais-message" class="alert d-none"></div>
+                        <p>Aqui você pode visualizar e editar suas informações pessoais.</p>
+                        
+                        <form id="dados-pessoais-form">
+                            <div class="form-group">
+                                <label for="profileName">Nome Completo</label>
+                                <input type="text" id="profileName" name="nome_completo" class="form-control" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label for="profileEmail">Email</label>
+                                <input type="email" id="profileEmail" name="email" class="form-control" disabled>
+                            </div>
+                            
+                            <div class="card-actions">
+                                <button type="button" id="edit-profile-btn" class="btn btn-primary">
+                                    <i class="fas fa-pencil-alt"></i> Editar Dados
+                                </button>
+                                <button type="submit" id="save-profile-btn" class="btn btn-success d-none">
+                                    <i class="fas fa-save"></i> Salvar Alterações
+                                </button>
+                                <button type="button" id="change-password-btn" class="btn btn-secondary">
+                                    <i class="fas fa-lock"></i> Alterar Senha
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+                <section id="section-plano" class="content-section">
+                    </section>
+
+                <section id="section-plano-alimentar" class="content-section">
+                    </section>
+
+                <section id="section-plano-treino" class="content-section">
+                    </section>
+
+                <section id="section-feedback" class="content-section">
+                    </section>
+                
+                <section id="section-cancelar-conta" class="content-section">
+                      <h2><i class="fas fa-user-slash"></i> Cancelar Conta</h2>
+                      <div class="card card-danger">
+                          <h3>Atenção!</h3>
+                          <p>Esta é uma ação irreversível. Todos os seus dados, incluindo planos e histórico, serão permanentemente excluídos. Se você tem uma assinatura ativa, ela será cancelada imediatamente.</p>
+                          <button id="delete-account-btn" class="btn btn-danger">Eu entendo, desejo excluir minha conta</button>
+                      </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/database.js"></script>
+    <script src="js/perfil.js" defer></script>
+</body>
+</html>

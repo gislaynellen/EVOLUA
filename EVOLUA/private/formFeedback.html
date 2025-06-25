@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVOLUA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/formularios.css">
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-header">
+            <h1><i class="fas fa-comment-dots"></i> Deixe seu Feedback</h1>
+            <p>Sua opinião nos ajuda a melhorar nossos serviços</p>
+        </div>
+
+        <form id="feedback-form" class="feedback-form">
+            <div class="form-section">
+                <h2><i class="fas fa-tag"></i> Tipo de Feedback</h2>
+                <div class="form-group">
+                    <label for="tipo_feedback">Este feedback é sobre:</label>
+                    <select id="tipo_feedback" name="tipo_feedback" required>
+                        <option value="">Selecione...</option>
+                        <option value="plataforma">A plataforma em geral</option>
+                        <option value="planos">Planos de Assinatura</option>
+                        <option value="dieta">Plano Alimentar</option>
+                        <option value="treino">Plano de Treino</option>
+                        <option value="atendimento">Atendimento ao Cliente</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2><i class="fas fa-star"></i> Avaliação</h2>
+                <div class="form-group">
+                    <label>Sua satisfação geral:</label>
+                    <div class="rating-container">
+                        <div class="rating-stars">
+                            <input type="radio" id="star5" name="avaliacao" value="5">
+                            <label for="star5"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star4" name="avaliacao" value="4">
+                            <label for="star4"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star3" name="avaliacao" value="3">
+                            <label for="star3"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star2" name="avaliacao" value="2">
+                            <label for="star2"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star1" name="avaliacao" value="1">
+                            <label for="star1"><i class="fas fa-star"></i></label>
+                        </div>
+                        <div class="rating-labels">
+                            <span>Péssimo</span>
+                            <span>Excelente</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2><i class="fas fa-comment-alt"></i> Seu Feedback</h2>
+                <div class="form-group">
+                    <label for="mensagem">Descreva seu feedback com detalhes:</label>
+                    <textarea id="mensagem" name="mensagem" rows="6" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="sugestoes">Sugestões de melhoria (opcional):</label>
+                    <textarea id="sugestoes" name="sugestoes" rows="4"></textarea>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <div class="form-group checkbox-single">
+                    <label>
+                        <input type="checkbox" name="permissao_publicacao" value="sim">
+                        Autorizo a publicação deste feedback (sem informações pessoais)
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-paper-plane"></i> Enviar Feedback
+                </button>
+                <button type="button" class="btn btn-secondary" id="cancelar-feedback">
+                    <i class="fas fa-times"></i> Cancelar
+                </button>
+                <button type="button" class="btn btn-danger" id="excluir-feedback" style="display: none;">
+                    <i class="fas fa-trash"></i> Excluir Feedback
+                </button>
+            </div>
+        </form>
+    </div>
+    <script src="js/database.js"></script>
+    <script src="js/formFeedback.js"></script>
+</body>
+</html>
