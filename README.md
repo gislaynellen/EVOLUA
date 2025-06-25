@@ -45,11 +45,10 @@ A aplicação é dividida em duas áreas principais: a **Pública** e a **Privad
 | Página / Componente | Descrição                                                                 |
 | ------------------- | ------------------------------------------------------------------------- |
 | `perfil.html`       | Painel principal do usuário logado, com resumo de seus planos.            |
-| `.html`             | Exibe e permite ao usuário gerenciar (CRUD) seus planos de treino.        |
-| `m.html`            | Exibe e permite ao usuário gerenciar (CRUD) seus planos de dieta.         |
-| `m.html`            | Formulário interativo para criar ou editar um novo plano (treino/dieta).  |
-| `.html`             | Página para o usuário visualizar e atualizar seus dados cadastrais.       |
-|
+| `formTreino.html`   | Exibe e permite ao usuário gerenciar (CRUD) seus planos de treino.        |
+| `formDieta.html`    | Exibe e permite ao usuário gerenciar (CRUD) seus planos de dieta.         |
+| `formAssinatur.html`| Formulário interativo para criar ou editar um novo plano (treino/dieta).  |
+| `formFeedback.html` | Página para o usuário visualizar e atualizar seus dados cadastrais.       |
 
 ---
 
